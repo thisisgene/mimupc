@@ -246,6 +246,19 @@ a:hover {
 
 .section#podcasts {
   background: #114;
+  width: 100vw;
+  height: auto !important;
+  text-align: center;
+}
+.section#podcasts h1 {
+  color: #fff;
+  margin-bottom: 2rem;
+}
+.section#podcasts .podcast-container {
+  padding: 4rem 3rem;
+}
+.section#podcasts .podcast-container .podcast {
+  margin-bottom: 1.4rem;
 }
 
 .section#contact {
