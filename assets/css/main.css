@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@200&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Outfit", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #444;
+}
+a:hover {
+  color: #888;
+}
+
+.section {
+  width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 3.5rem 1rem;
+  }
+}
+#start {
+  width: 100vw;
+}
+#start .mobile-menu {
+  display: none;
+}
+#start .nav {
+  width: 100vw;
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.5);
+}
+#start .nav .title span {
+  font-size: 1.4rem;
+}
+#start .nav .menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#start .nav .menu ul li {
+  display: inline-block;
+  margin: 0 1rem;
+  font-size: 1.1rem;
+}
+#start .nav .menu ul li a {
+  color: #111;
+  text-decoration: none;
+  transition: 200ms opacity ease-in-out;
+}
+#start .nav .menu ul li a:hover {
+  opacity: 0.7;
+}
+@media (max-width: 720px) {
+  #start .nav {
+    display: none;
+  }
+  #start .mobile-menu {
+    position: fixed;
+    z-index: 14;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+  }
+  #start .mobile-menu--nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.7);
+    transition: all 300ms ease-in-out;
+    height: 3.5rem;
+  }
+  #start .mobile-menu--nav .button span {
+    position: relative;
+    display: block;
+    width: 1.6rem;
+    height: 2px;
+    transition: all 200ms;
+  }
+  #start .mobile-menu--nav .button span:before {
+    content: "";
+    background: #050505;
+    position: absolute;
+    left: 0;
+    transform: translateY(-0.3rem);
+    width: inherit;
+    height: 1px;
+    transition: all 300ms ease-in-out;
+  }
+  #start .mobile-menu--nav .button span:after {
+    content: "";
+    background: #050505;
+    position: absolute;
+    left: 0;
+    transform: translateY(0.3rem);
+    width: inherit;
+    height: 1px;
+    transition: all 300ms ease-in-out;
+  }
+  #start .mobile-menu--list {
+    pointer-events: none;
+    height: 0;
+    width: 100vw;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: all 300ms ease-in-out;
+    flex: 1;
+  }
+  #start .mobile-menu--list ul {
+    list-style: none;
+    padding: 0;
+    margin-top: -1rem;
+  }
+  #start .mobile-menu--list ul li {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  #start .mobile-menu--list ul li a {
+    text-decoration: none;
+    color: #111;
+  }
+  #start .mobile-menu.isOpen .mobile-menu--nav {
+    background: rgba(255, 255, 255, 0.95);
+  }
+  #start .mobile-menu.isOpen .mobile-menu--nav .button span {
+    transition: all 200ms;
+  }
+  #start .mobile-menu.isOpen .mobile-menu--nav .button span:before {
+    transform: rotateZ(45deg) translateY(0);
+  }
+  #start .mobile-menu.isOpen .mobile-menu--nav .button span:after {
+    transform: rotateZ(-45deg) translateY(0);
+  }
+  #start .mobile-menu.isOpen .mobile-menu--list {
+    pointer-events: all;
+    height: auto;
+    transform: translateX(0%);
+    background: rgba(255, 255, 255, 0.95);
+  }
+}
+
+#frontpage {
+  width: 100vw;
+  height: 100vh;
+  background-attachment: fixed;
+}
+#frontpage .background-image {
+  width: 100vw;
+  height: 100vh;
+  background: url(../img/background.jpg) fixed;
+  background-size: cover;
+}
+#frontpage .background-image img {
+  height: 100vh;
+}
+#frontpage .front-text-container {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#frontpage .front-text-container .front-text {
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2rem 3rem;
+}
+#frontpage .front-text-container .front-text .cta {
+  margin-top: 2rem;
+  text-align: right;
+}
+#frontpage .front-text-container .front-text .cta a {
+  display: inline-block;
+  background: lightblue;
+  padding: 0.4rem 1rem;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #222;
+  font-size: 1.4rem;
+  transform: translate(-2px, -2px);
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: all 100ms ease-in-out;
+}
+#frontpage .front-text-container .front-text .cta a .link-inner {
+  display: flex;
+}
+#frontpage .front-text-container .front-text .cta a img {
+  margin-right: 0.8rem;
+  height: 2rem;
+}
+#frontpage .front-text-container .front-text .cta a:hover {
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+  transform: translate(0, 0);
+}
+@media (max-width: 720px) {
+  #frontpage {
+    height: auto !important;
+  }
+  #frontpage .front-text-container {
+    margin: 0;
+  }
+  #frontpage .front-text-container .front-text {
+    padding: 2rem 1rem;
+    margin: 1rem;
+  }
+  #frontpage .front-text-container .front-text .cta {
+    text-align: center;
+  }
+}
+
+.section#info {
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section#info .textbox {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+.section#info .textbox h1 {
+  margin: 0;
+}
+
+.section#podcasts {
+  background: #114;
+}
+
+.section#contact {
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section#contact .contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+.section#contact .contact-container ul {
+  list-style: none;
+  padding: 0;
+}
+.section#contact .contact-container ul li {
+  margin: 0.4rem 0;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+.section#contact .contact-container ul li .img-container {
+  margin-right: 0.8rem;
+}
+.section#contact .contact-container ul li img {
+  height: 1.4rem;
+}

@@ -1,0 +1,42 @@
+#start
+  nav.nav
+    .title
+      span SI TACUISSES
+    .menu
+      ul
+        li
+          a(href="#start").menu-item Start
+        li
+          a(href="#info").menu-item Info
+        li
+          a(href="#podcasts").menu-item Podcasts
+        li
+          a(href="#contact").menu-item Contact
+  nav.mobile-menu#mobile-menu
+    .mobile-menu--nav
+      .mobile-menu--nav__title
+        span SI TACUISSES
+      .mobile-menu--nav__button
+        .button(onClick="openMenu();")
+          span
+    .mobile-menu--list
+      ul
+        li
+          a(href="#start", onClick="openMenu();").menu-item Start
+        li
+          a(href="#info", onClick="openMenu();").menu-item Info
+        li
+          a(href="#podcasts", onClick="openMenu();").menu-item Podcasts
+        li
+          a(href="#contact", onClick="openMenu();").menu-item Contact
+        
+  script.
+    const openMenu = () => {
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileMenu.classList.contains('isOpen')) {
+        mobileMenu.classList.remove('isOpen')
+      } else {
+        mobileMenu.classList.add('isOpen')
+      }
+      console.log('classes ', mobileMenu.classList)
+    }

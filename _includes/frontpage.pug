@@ -1,0 +1,39 @@
+.page#frontpage
+  .background-image#background-image
+  .front-text-container
+    .front-text
+      h2.sub-title
+        | SI TACUISSES
+      p.lead-text
+        | Das langanhaltende Veranstaltungsverbot bedeutete für viele Musikschaffende einen Rückzug in die eigenen vier Wände, um dort an neuer Musik zu arbeiten – oder sich retrospektiv liegengebliebene Werke zu vergegenwärtigen, die es bis dato nicht an die Öffentlichkeit schafften. 
+      p.lead-text
+        |Aus dieser Not wollen wir eine explorative Tugend machen und das Format Podcast nutzen, um im Musiker*innengespräch chronologisch durch alte und neue, möglicherweise unfertige, jedenfalls unveröffentlichte Skizzen zu reisen, für die es ansonsten kein Verwertungsmodell gibt.
+
+      .cta
+        a(href='https://spotify.com', target=('_blank'))
+          .link-inner
+            //- | &rarr;
+            img(src='../assets/img/icons/spotify_icon.svg')
+            | Geh zu Spotify
+script.
+  
+  let scrollY;
+  
+  const zoomImage = (yPos) => {
+    let image = document.getElementById('background-image');  
+    let imgStyle = image.style;
+    imgStyle.WebkitFilter = 'grayscale('+ yPos / 5 +'%)';
+    imgStyle.filter = 'grayscale('+ yPos / 5 +'%)';
+  }
+  
+  document.addEventListener('scroll', function(e) {
+    scrollY = window.scrollY;
+    zoomImage(scrollY);
+  });
+
+  
+
+
+  //- new simpleParallax(image, {
+  //-   delay: 4, transition: 'cubic-bezier(0,0,0,1)'
+  //- });

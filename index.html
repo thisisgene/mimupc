@@ -1,0 +1,127 @@
+<!DOCTYPE html(lang='de')>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>SI TACUISSES</title>
+  <meta name="description" content=""/>
+  <meta name="keywords" content=""/>
+  <meta name="viewport" content="width=device-width"/>
+  <!--// Google verification-->
+  <!--// favicons-->
+  <!-- Custom CSS-->
+  <link rel="stylesheet" href="assets/css/main.css"/>
+  <!-- javascript--><script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+</head>
+<div id="start">
+  <nav class="nav">
+    <div class="title"><span>SI TACUISSES</span></div>
+    <div class="menu">
+      <ul>
+        <li><a class="menu-item" href="#start">Start</a></li>
+        <li><a class="menu-item" href="#info">Info</a></li>
+        <li><a class="menu-item" href="#podcasts">Podcasts</a></li>
+        <li><a class="menu-item" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <nav class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu--nav">
+      <div class="mobile-menu--nav__title"><span>SI TACUISSES</span></div>
+      <div class="mobile-menu--nav__button">
+        <div class="button" onClick="openMenu();"><span></span></div>
+      </div>
+    </div>
+    <div class="mobile-menu--list">
+      <ul>
+        <li><a class="menu-item" href="#start" onClick="openMenu();">Start</a></li>
+        <li><a class="menu-item" href="#info" onClick="openMenu();">Info</a></li>
+        <li><a class="menu-item" href="#podcasts" onClick="openMenu();">Podcasts</a></li>
+        <li><a class="menu-item" href="#contact" onClick="openMenu();">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <script>
+    const openMenu = () => {
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileMenu.classList.contains('isOpen')) {
+        mobileMenu.classList.remove('isOpen')
+      } else {
+        mobileMenu.classList.add('isOpen')
+      }
+      console.log('classes ', mobileMenu.classList)
+    }
+  </script>
+</div>
+<div class="page" id="frontpage">
+  <div class="background-image" id="background-image"></div>
+  <div class="front-text-container">
+    <div class="front-text">
+      <h2 class="sub-title">SI TACUISSES</h2>
+      <p class="lead-text">Das langanhaltende Veranstaltungsverbot bedeutete für viele Musikschaffende einen Rückzug in die eigenen vier Wände, um dort an neuer Musik zu arbeiten – oder sich retrospektiv liegengebliebene Werke zu vergegenwärtigen, die es bis dato nicht an die Öffentlichkeit schafften. </p>
+      <p class="lead-text">Aus dieser Not wollen wir eine explorative Tugend machen und das Format Podcast nutzen, um im Musiker*innengespräch chronologisch durch alte und neue, möglicherweise unfertige, jedenfalls unveröffentlichte Skizzen zu reisen, für die es ansonsten kein Verwertungsmodell gibt.</p>
+      <div class="cta"><a href="https://spotify.com" target="_blank">
+          <div class="link-inner"><img src="../assets/img/icons/spotify_icon.svg"/>Geh zu Spotify</div></a></div>
+    </div>
+  </div>
+</div>
+<script>
+  let scrollY;
+  
+  const zoomImage = (yPos) => {
+    let image = document.getElementById('background-image');  
+    let imgStyle = image.style;
+    imgStyle.WebkitFilter = 'grayscale('+ yPos / 5 +'%)';
+    imgStyle.filter = 'grayscale('+ yPos / 5 +'%)';
+  }
+  
+  document.addEventListener('scroll', function(e) {
+    scrollY = window.scrollY;
+    zoomImage(scrollY);
+  });
+  
+  
+  
+  
+  //- new simpleParallax(image, {
+  //-   delay: 4, transition: 'cubic-bezier(0,0,0,1)'
+  //- });
+</script>
+<div class="section page" id="info">
+  <div class="textbox">
+    <p>Ein Podcast von Mimu Merz und Sandro Nicolussi in Kooperation mit dem Verein Kunstkumpel Waldhausen (Trägerverein) und Lames in St.Pölten. Gefördert von der MA7 der Stadt Wien und dem Land Niederösterreich. </p>
+    <p>Aus dieser Not wollen machen wir eine explorative Tugend und nutzen das Format Podcast, um im Gespräch mit österreichischen Musiker*innen durch alte und neue, möglicherweise unfertige, jedenfalls aber noch unveröffentlichte Skizzen zu wühlen. </p>
+    <p>Dabei stehen Authentizität und Imperfektion der Werke und das Ergründen des jeweiligen Workflows im Vordergrund, was mehr vom kreativen Prozess und der/des Musiker*innenpersönlichkeit preisgeben mag, als fleckenlos polierte Studioproduktionen, die die Öffentlichkeit für gewöhnlich zu hören bekommt. </p>
+    <p>Im Zentrum des Gesprächs: Was hat zur Skizze inspiriert? Gab es handwerkliche, formale oder motivatorische Hürden? Was waren die Lebensumstände bei der Skizzenerstellung? Warum wurde nichts aus dem Ding? Was verbindet man mit dieser Vorstufe eines fertigen Stückes bzw. geniert man sich gar ein wenig, es preiszugeben? </p>
+    <p>Damit soll die Fassade der Genialität angesägt werden, die in der musikalischen Populärkultur zum Konsens wurde. Wo Menschen meinen, die Hits von morgen werden von den Protagonist*innen einfach aus dem Ärmel geschüttelt, blicken wir hinter den romantischen Vorhang und durchforsten den Dschungel von Arbeitsprozess, Selbstzweifel und Scheitern. Backstage zum Anhören, quasi. </p>
+  </div>
+</div>
+<div class="section page" id="podcasts">
+  <div class="podcast-container"></div>
+</div>
+<div class="section page" id="contact">
+  <div class="contact-container">
+    <h1>Contact</h1>
+    <ul>
+      <li>
+        <div class="img-container"><img src="../assets/img/icons/email_icon.png"/></div><a href="mailto:sitacuisses.podcast@gmail.com">sitacuisses.podcast@gmail.com</a>
+      </li>
+      <li>
+        <div class="img-container"><img src="../assets/img/icons/instagram_icon.svg"/></div><a href="https://instagram.com/sitacuisses.podcast">@sitacuisses.podcast</a>
+      </li>
+      <li>
+        <div class="img-container"><img src="../assets/img/icons/facebook_icon.svg"/></div><a href="https://fb.me/sitacuisses.podcast">fb.me/sitacuisses.podcast</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<script>
+  document.querySelectorAll('.page').forEach(item => {
+    //- console.log('item ', item)
+    item.addEventListener('scroll', event => {
+      console.log('hallo', item.id)
+      //- if (item.offsetTop <= 0) {
+      //-   console.log('page: ', item.id)
+      //- }
+    })
+  })
+</script>

@@ -1,0 +1,19 @@
+include _includes/head
+
+include _includes/header
+include _includes/frontpage
+include _includes/info
+include _includes/podcasts
+include _includes/contact
+
+
+script.
+  document.querySelectorAll('.page').forEach(item => {
+    //- console.log('item ', item)
+    item.addEventListener('scroll', event => {
+      console.log('hallo', item.id)
+      //- if (item.offsetTop <= 0) {
+      //-   console.log('page: ', item.id)
+      //- }
+    })
+  })
